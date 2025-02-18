@@ -1,0 +1,5 @@
+Terminal: npm init -y
+Terminal: npm i express nodemon dotenv
+create a new file: ".env" include the dot
+create a new file: index.js
+modify package.json with -> "type":"module"
