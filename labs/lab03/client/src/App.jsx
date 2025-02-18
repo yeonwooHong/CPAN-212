@@ -17,6 +17,13 @@ const App = () => {
     }
   };
 
+  const handleMultipleFileChange = (e) => {
+    if (e.target.files.length > 0) {
+      setMultipleFiles([...e.target.files]);
+    }
+  };
+
+
   // fetch functions -> fetch a random single image
   const fetchSingleFile = async () => {
     try {
@@ -88,27 +95,27 @@ const App = () => {
     }
   }
 
-    // fetch functions -> save multiple
-    const handleSubmitMultipleFile = async (e) => {
-      e.preventDefault();
-      const formData = new FormData();
-  
-      multipleFiles.forEach((file) => {
-        formData.append("files", file);
-      })
-  
-      try {
-        const response = await fetch(`http://localhost:8000/save/multiple`, {
-          method: 'POST',
-          body: formData,
-        });
-  
-        const data = response.json();
-        setMessage("Files have been uploaded");
-      } catch (error) {
-        console.log("Error:", error);
-      }
+  // fetch functions -> save multiple
+  const handleSubmitMultipleFile = async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+
+    multipleFiles.forEach((file) => {
+      formData.append("files", file);
+    })
+
+    try {
+      const response = await fetch(`http://localhost:8000/save/multiple`, {
+        method: 'POST',
+        body: formData,
+      });
+
+      const data = response.json();
+      setMessage("Files have been uploaded");
+    } catch (error) {
+      console.log("Error:", error);
     }
+  }
 
   // fetch functions -> fetch dog image
   const fetchDogImage = async () => {
@@ -124,14 +131,14 @@ const App = () => {
 
   // fetch functions -> save dog image
   const saveDogImage = async () => {
-    try{
+    try {
       const fileResponse = await fetch(displayDogImage);
       const blob = await fileResponse.blob();
 
       const formData = new FormData();
       formData.append("file", blob, "dog-image.jpg");
 
-      const response = await fetch(`http://localhost:8000/save/single`,{
+      const response = await fetch(`http://localhost:8000/save/single`, {
         method: 'POST',
         body: formData,
       });
@@ -178,11 +185,17 @@ const App = () => {
         )) // () => {} for run the func and no return. () => () func w return
       ) : (<p>No images to display</p>)}
 
+      <form onSubmit={handleSubmitMultipleFile}>
+        <h2>Upload Multiple Files</h2>
+        <input type="file" multiple onChange={handleMultipleFileChange} />
+        <button type="submit">Upload Multiple Files</button>
+      </form>
+
       <h2>Fetch Dog Image</h2>
       <button onClick={fetchDogImage}>Fetch Dog Image</button>
       {displayDogImage && (
         <div>
-          <img src={displayDogImage} style={{ width: "200px"}} />
+          <img src={displayDogImage} style={{ width: "200px" }} />
         </div>
       )}
       <button onClick={saveDogImage}>Save it</button>
