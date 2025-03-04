@@ -4,12 +4,12 @@ Computer Programming Student (Co-op) | Former Backend Developer
 
 A motivated computer programming student currently pursuing a co-op position in software development.
 With a solid foundation in backend development, data systems optimization, and full-stack web development,
-Yeonwoo is a bilingual professional passionate about continuous learning and technical collaboration.
-Experienced in Python, Django, Java, and modern frontend frameworks like React and Next.js, he has contributed
+I am a professional passionate about continuous learning and technical collaboration.
+Experienced in Python, Django, Java, and modern frontend frameworks like React and Next.js, I have contributed
 to multiple projects focusing on system optimization, API development, and data-driven solutions.
 
 Key Achievements:
-• Reduced customer service processing time by 95% through backend automation at 60Hertz.
+• Reduced customer service processing time by 95% through backend automation at GracefulRain.
 • Improved the scalability and performance of a backend system by 35% through a Node.js to Django migration.
 • Demonstrated hands-on experience in various projects, including renewable energy dashboards and consultation scheduling systems.
 • AWS Certified Developer - Associate, with expertise in backend systems and cross-platform mobile development.
