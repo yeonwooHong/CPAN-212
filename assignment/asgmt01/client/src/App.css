@@ -1,0 +1,127 @@
+* {
+  box-sizing: border-box; /* Ensure padding and border are included in the element's total width/height */
+}
+
+/* Color Scheme */
+:root {
+  --light-beige: #EEF1DA;
+  --light-green: #D5E5D5;
+  --light-blue: #C7D9DD;
+  --soft-blue: #ADB2D4;
+  --dark-text: #333333;
+}
+
+/* General styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--light-beige);
+  color: var(--dark-text);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensures that body takes full height */
+  box-sizing: border-box;
+  overflow-y: auto; /* Add scroll bar for the whole screen */
+}
+
+/* Main container */
+.container {
+  background-color: var(--light-green);
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Prevent overflow inside container */
+  max-height: 90vh; /* Prevent container from exceeding the screen height */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: relative; /* Position to ensure container stays in place */
+  overflow-y: auto; /* Allow scrolling within container if content overflows */
+}
+
+/* Header */
+header h2 {
+  color: var(--soft-blue);
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+header h3 {
+  color: var(--soft-blue);
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Button styles */
+button {
+  background-color: var(--light-blue);
+  color: var(--dark-text);
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  margin: 10px 0;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--soft-blue);
+}
+
+/* Data sections */
+pre {
+  background-color: var(--light-beige);
+  border-radius: 5px;
+  padding: 15px;
+  margin-top: 10px;
+  display: block;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Footer */
+footer p {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 20px;
+  color: var(--dark-text);
+}
+
+/* Flexbox for buttons to prevent overlap */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Smooth scroll for pre */
+pre {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.link {
+  color: var(--dark-text);
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
